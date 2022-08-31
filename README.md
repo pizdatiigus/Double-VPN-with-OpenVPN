@@ -1,13 +1,14 @@
 # Double VPN with OpenVPN
 Double VPN with OpenVPN / двойной vpn как сделать / double vpn своими руками / How to chain two OpenVPN servers
 
-Debian Ubuntu
+Debian / Ubuntu
 
 Debian >= 10
 
 Ubuntu >= 16.04
 
 **Тестировано на Debian 10**
+
 **Tested Debian 10**
 
 Покупаешь 2 сервака VPS
@@ -89,7 +90,7 @@ tshark -i eth0 -f "port 53"
 
 Чтобы трафик не шел мимо впн
 
-Замени интерфейс enp1s0 на свой, узнать имя так
+Замени интерфейс eth0 на свой, узнать имя так
 
 ```bash
 ifconfig
@@ -104,7 +105,7 @@ iptables -A INPUT -j REJECT --reject-with icmp-host-prohibited
 iptables -A FORWARD -j REJECT --reject-with icmp-host-prohibited
 iptables -A OUTPUT -o lo -j ACCEPT
 iptables -A OUTPUT -o tun0 -j ACCEPT
-iptables -A OUTPUT -d 111.111.111.111 -o enp1s0 -p tcp -m tcp --dport 443 -j ACCEPT
+iptables -A OUTPUT -d 111.111.111.111 -o eth0 -p tcp -m tcp --dport 443 -j ACCEPT
 iptables -A OUTPUT -j REJECT --reject-with icmp-host-prohibited
 
 ip6tables -A INPUT -j DROP
