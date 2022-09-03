@@ -1,5 +1,5 @@
 # Double VPN with OpenVPN
-Double VPN with OpenVPN / двойной vpn как сделать / double vpn своими руками / How to chain two OpenVPN servers
+Double VPN with OpenVPN / двойной vpn как сделать / double vpn своими руками / How to chain two OpenVPN servers / double vpn reddit / double vpn nordvpn
 
 Debian / Ubuntu
 
